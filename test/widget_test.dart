@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:reciclagem/main.dart';
-import 'package:reciclagem/view/pagina_inicial.dart';
+import 'file:///C:/Users/Eloy/AndroidStudioProjects/reciclagem/lib/view/pagina_inicial/pagina_inicial.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {

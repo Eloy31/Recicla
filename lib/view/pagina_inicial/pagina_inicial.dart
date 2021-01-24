@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:reciclagem/view/navbar/tela_login.dart';
-
-import 'navbar/mapa.dart';
-import 'navbar/saiba_mais.dart';
+import 'package:reciclagem/view/pagina_inicial/tabs/mapa.dart';
+import 'package:reciclagem/view/pagina_inicial/tabs/saiba_mais.dart';
+import 'package:reciclagem/view/pagina_inicial/tabs/tela_login.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -81,13 +80,14 @@ class Navigation extends StatelessWidget {
           body: Stack(
             children: <Widget>[
               TabBarView(
+                physics: NeverScrollableScrollPhysics(),
                 children: [
                   saibaMais,
                   mapa,
                   login,
                 ],
               ),
-              ListTile(
+              /*ListTile(
                 contentPadding: EdgeInsets.only(top: 563.0),
                 title: Row(
                   children: <Widget>[
@@ -117,7 +117,7 @@ class Navigation extends StatelessWidget {
                     )),
                   ],
                 ),
-              ),
+              ),*/
             ],
           ),
           /*bottomNavigationBar: BottomNavigationBar(

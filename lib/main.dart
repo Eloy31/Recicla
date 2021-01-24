@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:reciclagem/view/pagina_inicial.dart';
+import 'controller/construtorBancoDados.dart';
+import 'file:///C:/Users/Eloy/AndroidStudioProjects/reciclagem/lib/view/pagina_inicial/pagina_inicial.dart';
 import 'configuration/hexadecimal.dart';
 
 void main(){
-  runApp((MaterialApp(
+  WidgetsFlutterBinding.ensureInitialized();
+  ConnectAndConstructorPostgres con = new ConnectAndConstructorPostgres();
+  con.construcao();
+  /*runApp((MaterialApp(
     theme: ThemeData(
         primaryColor: HexColor("2F80ED"),
         accentColor: HexColor("EDAB2F"),
@@ -11,5 +15,5 @@ void main(){
             buttonColor: Colors.blueAccent[700],
             textTheme: ButtonTextTheme.primary)),
     home: Home(),
-  )));
+  )));*/
 }
