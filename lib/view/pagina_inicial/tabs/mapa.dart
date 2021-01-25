@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:reciclagem/controller/cooperativa_controller.dart';
 import 'package:reciclagem/model/cooperativa.dart';
 
 class Mapa extends StatefulWidget {
@@ -10,6 +11,7 @@ class Mapa extends StatefulWidget {
 
 class _MapaState extends State<Mapa> {
   Completer<GoogleMapController> _controller = Completer();
+  CooperativaController _cooperativaController = new CooperativaController();
   static const LatLng _latlong = const LatLng(-15.7801, -47.9292);
   void _onMapCreated(GoogleMapController controller) {
     _controller.complete(controller);
@@ -18,37 +20,42 @@ class _MapaState extends State<Mapa> {
   Map<int, Marker> pontos = new Map();
 
   void _addPontosCooperativa(List<Cooperativa> cooperativas) {
-    cooperativas.map((e) => {_addPonto(e)});
+    for (final c in cooperativas) {
+      _addPonto(c);
+    }
   }
 
   void _addPonto(Cooperativa e) {
-    final Marker marker = Marker(position: LatLng(e.latitude, e.longitude),markerId: MarkerId(e.identificador), onTap: (){_configurandoModalBottomSheet(e);});
+    final Marker marker = Marker(position: LatLng(e.latitude, e.longitude),markerId: MarkerId(e.identificador), onTap: (){_configurandoModalBottomSheetCooperativa(e);});
     setState(() {
       int tam = pontos.length;
       pontos[tam] = marker;
     });
   }
 
-  void _configurandoModalBottomSheet(Cooperativa cooperativa){
+  void _configurandoModalBottomSheetCooperativa(Cooperativa cooperativa){
     showModalBottomSheet(
         context: context,
         builder: (BuildContext bc){
           return Container(
             child: Wrap(children: <Widget>[
               ListTile(
-                  leading: new Icon(Icons.music_note),
-                  title: new Text('Músicas'),
+                  title: new Text(cooperativa.identificador),
                   onTap: () => {}
               ),
               ListTile(
-                leading: new Icon(Icons.videocam),
-                title: new Text('Videos'),
+                leading: new Icon(Icons.add_call),
+                title: new Text(cooperativa.contato),
                 onTap: () => { },
               ),
               ListTile(
-                leading: new Icon(Icons.satellite),
-                title: new Text('Tempo'),
+                leading: new Icon(Icons.assignment_ind),
+                title: new Text(cooperativa.responsavel),
                 onTap: () => {},
+              ),
+              ListTile(
+                title: new Text(cooperativa.setorHabitacional + '     ' + cooperativa.cep),
+                onTap: () => { },
               ),
             ],
             ),
@@ -59,9 +66,7 @@ class _MapaState extends State<Mapa> {
 
   @override
   Widget build(BuildContext context) {
-/*    _addPonto(-15.802388916561254, -48.04011769489368, "bonanza");
-    _addPonto(-15.796212389047973, -48.01454878186181, "padaria lixosa");*/
-
+    _cooperativaController.findAll().then((value) => _addPontosCooperativa(value));
     return DefaultTabController(
       length: 4,
       child: Scaffold(

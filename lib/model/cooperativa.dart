@@ -19,6 +19,7 @@ class Cooperativa {
       this._observacao,
       this._latitude,
       this._longitude);
+
   /*------------------------------------------*/
   double get longitude => _longitude;
   set longitude(double value) {
