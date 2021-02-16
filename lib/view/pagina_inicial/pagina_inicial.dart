@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:reciclagem/view/pagina_inicial/tabs/mapa.dart';
-import 'package:reciclagem/view/pagina_inicial/tabs/saiba_mais.dart';
-import 'package:reciclagem/view/pagina_inicial/tabs/tela_login.dart';
+import 'file:///C:/Users/Eloy/AndroidStudioProjects/reciclagem/lib/view/navbar/navbar.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -11,132 +9,109 @@ class Home extends StatelessWidget {
         title: const Text('Recicla IFB'),
         centerTitle: true,
       ),
-      body: Stack(
-        children: <Widget>[
-          Container(
-              decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage('assets/background_top.png'),
-                fit: BoxFit.cover),
-          )),
-          Container(
-              child: ElevatedButton(
-            child: Text('Open route'),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Navigation()),
-              );
-            },
-          )),
-        ],
-      ),
-    );
-  }
-}
-
-class Navigation extends StatelessWidget {
-  int _selectedIndex = 0;
-  SaibaMais saibaMais = new SaibaMais();
-  Mapa mapa = new Mapa();
-  Login login = new Login();
-
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Business',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 1: Business',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 2: School',
-      style: optionStyle,
-    ),
-  ];
-
-  @override
-  Widget build(BuildContext context) {
-    return DefaultTabController(
-        length: 3,
-        child: Scaffold(
-          appBar: AppBar(
-            title: const Text('Recicla IFB'),
-            centerTitle: true,
-            bottom: TabBar(
-              tabs: [
-                Tab(icon: Icon(Icons.article_outlined), text: 'Saiba Mais'),
-                Tab(
-                  icon: Icon(Icons.map_outlined),
-                  text: 'Mapa',
-                ),
-                Tab(icon: Icon(Icons.login), text: 'Entrar'),
-              ],
-            ),
-          ),
-          body: Stack(
+      body: Scaffold(
+          body: ListView(
             children: <Widget>[
-              TabBarView(
-                physics: NeverScrollableScrollPhysics(),
-                children: [
-                  saibaMais,
-                  mapa,
-                  login,
-                ],
-              ),
-              /*ListTile(
-                contentPadding: EdgeInsets.only(top: 563.0),
-                title: Row(
-                  children: <Widget>[
-                    Expanded(
-                        child: Container(
-                      height: 100,
-                      padding: EdgeInsets.all(10),
-                      child: RaisedButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        child: Text("Início", style: TextStyle(fontSize: 25)),
-                        color: Colors.black,
-                        textColor: Colors.white,
+              Container(
+                margin: const EdgeInsets.only(left: 30.0, top: 50.0, right: 30.0),
+                color: Colors.amber[600],
+                width: 250.0,
+                height: 230.0,
+                padding: EdgeInsets.only(top: 25.0),
+                child: Column(
+                  children: [
+                    Text(
+                      'Seja Bem Vindo,',
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 20.0,
                       ),
-                    )),
-                    Expanded(
-                        child: Container(
-                      height: 100,
-                      padding: EdgeInsets.all(10),
-                      child: RaisedButton(
-                        onPressed: () {},
-                        child: Text("Contato", style: TextStyle(fontSize: 25)),
-                        color: Colors.black,
-                        textColor: Colors.white,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 15.0, left: 20, right: 20),
+                      child: Text(
+                        'o Recicla IFB tem como objetivo aproximar e informar os usuários sobre aspectos relacionados ao descarte correto de materiais reciclados.',
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 20.0,
+                        ),
                       ),
-                    )),
+                    ),
                   ],
                 ),
-              ),*/
+              ),
+              Container(
+                margin: const EdgeInsets.only(left: 30.0, top: 50.0, right: 30.0),
+                color: Colors.amber[600],
+                width: 250.0,
+                height: 230.0,
+                padding: EdgeInsets.only(top: 25.0, left: 20, right: 20),
+                child: Text(
+                  'O Recicla IFB tem em seu menu superior a aba SAIBA MAIS, que possibilita a visualização de informações sobre assuntos relevantes sobre o descarte e coleta seletiva da região do Distrito Federal.',
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 20.0,
+                  ),
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.only(left: 30.0, top: 50.0, right: 30.0),
+                color: Colors.amber[600],
+                width: 250.0,
+                height: 150.0,
+                padding: EdgeInsets.only(top: 25.0,left: 20, right: 20),
+                child: Text(
+                  'Já na aba MAPA, lhe direciona para o mapa da região que você se encontra. Possibilitando a manipulação e a criar rotas.',
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 20.0,
+                  ),
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.only(left: 30.0, top: 50.0, right: 30.0),
+                color: Colors.amber[600],
+                width: 250.0,
+                height: 170.0,
+                padding: EdgeInsets.only(top: 25.0, left: 20, right: 20),
+                child: Text(
+                  'Nas abas LOGIN, você poderá se cadastrar no nosso sistema e entrar em sua conta para disfrutar de todas as nossas funcionalidades.',
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 20.0,
+                  ),
+                ),
+              ),
+               Container(
+                   margin: const EdgeInsets.only(left: 30.0, right: 30.0),
+                   color: Colors.transparent,
+                   width: 250.0,
+                   height: 150.0,
+                   padding: EdgeInsets.only(top: 50, right: 30, left: 30, bottom: 50),
+                    child: ElevatedButton(
+                      child: Text(
+                          'Começar a utilizar',
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 25.0,
+                          ),
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                      MaterialPageRoute(builder: (context) => Navigation()),
+              );
+            },
+                ))
             ],
           ),
-          /*bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-            onPressed: () {
-              Navigator.pop(context);
-            },
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: 'Business',
-          ),
-        ],
-        selectedItemColor: Colors.amber[800],
-        onTap: _onItemTapped(_selectedIndex, context),
-      ),*/
-        ));
+        ),
+    );
   }
 }

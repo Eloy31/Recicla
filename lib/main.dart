@@ -18,6 +18,7 @@ void main(){
         buttonTheme: ButtonThemeData(
             buttonColor: Colors.blueAccent[700],
             textTheme: ButtonTextTheme.primary)),
+    //home: Home(),
     home: Home(),
   )));
 }
