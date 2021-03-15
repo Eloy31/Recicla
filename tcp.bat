@@ -1,0 +1,1 @@
+adb reverse tcp:5432 tcp:5432

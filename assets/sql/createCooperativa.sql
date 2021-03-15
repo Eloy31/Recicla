@@ -11,8 +11,8 @@ CREATE TABLE public.cooperativa
     contato character varying(100) COLLATE pg_catalog."default",
     cep character varying(10) COLLATE pg_catalog."default",
     observacao character varying(255) COLLATE pg_catalog."default",
-    latitude real,
-    longitude real,
+    latitude real NOT NULL,
+    longitude real NOT NULL,
     CONSTRAINT cooperativa_pkey PRIMARY KEY (id)
 )
 WITH (

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'file:///C:/Users/Eloy/AndroidStudioProjects/reciclagem/lib/view/navbar/navbar.dart';
+import 'package:reciclagem/configuration/hexadecimal.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -8,13 +9,14 @@ class Home extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Recicla IFB'),
         centerTitle: true,
+        backgroundColor: HexColor("008251"),
       ),
       body: Scaffold(
           body: ListView(
             children: <Widget>[
               Container(
                 margin: const EdgeInsets.only(left: 30.0, top: 50.0, right: 30.0),
-                color: Colors.amber[600],
+                color: HexColor("2F80ED"),
                 width: 250.0,
                 height: 230.0,
                 padding: EdgeInsets.only(top: 25.0),
@@ -26,6 +28,7 @@ class Home extends StatelessWidget {
                       style: const TextStyle(
                         fontWeight: FontWeight.w500,
                         fontSize: 20.0,
+                        color: Colors.white,
                       ),
                     ),
                     Padding(
@@ -36,6 +39,7 @@ class Home extends StatelessWidget {
                         style: const TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 20.0,
+                          color: Colors.white,
                         ),
                       ),
                     ),
@@ -44,7 +48,7 @@ class Home extends StatelessWidget {
               ),
               Container(
                 margin: const EdgeInsets.only(left: 30.0, top: 50.0, right: 30.0),
-                color: Colors.amber[600],
+                color: HexColor("2F80ED"),
                 width: 250.0,
                 height: 230.0,
                 padding: EdgeInsets.only(top: 25.0, left: 20, right: 20),
@@ -54,36 +58,39 @@ class Home extends StatelessWidget {
                   style: const TextStyle(
                     fontWeight: FontWeight.w500,
                     fontSize: 20.0,
+                    color: Colors.white,
                   ),
                 ),
               ),
               Container(
                 margin: const EdgeInsets.only(left: 30.0, top: 50.0, right: 30.0),
-                color: Colors.amber[600],
+                color: HexColor("2F80ED"),
                 width: 250.0,
                 height: 150.0,
                 padding: EdgeInsets.only(top: 25.0,left: 20, right: 20),
                 child: Text(
-                  'Já na aba MAPA, lhe direciona para o mapa da região que você se encontra. Possibilitando a manipulação e a criar rotas.',
+                  'Já na aba MAPA, direciona para o mapa da região que você se encontra. Possibilitando a manipulação e a criar rotas.',
                   textAlign: TextAlign.center,
                   style: const TextStyle(
                     fontWeight: FontWeight.w500,
                     fontSize: 20.0,
+                    color: Colors.white,
                   ),
                 ),
               ),
               Container(
                 margin: const EdgeInsets.only(left: 30.0, top: 50.0, right: 30.0),
-                color: Colors.amber[600],
+                color: HexColor("2F80ED"),
                 width: 250.0,
                 height: 170.0,
                 padding: EdgeInsets.only(top: 25.0, left: 20, right: 20),
                 child: Text(
-                  'Nas abas LOGIN, você poderá se cadastrar no nosso sistema e entrar em sua conta para disfrutar de todas as nossas funcionalidades.',
+                  'As abas LOGIN, você poderá se cadastrar no nosso sistema e entrar em sua conta para disfrutar de todas as nossas funcionalidades.',
                   textAlign: TextAlign.center,
                   style: const TextStyle(
                     fontWeight: FontWeight.w500,
                     fontSize: 20.0,
+                    color: Colors.white,
                   ),
                 ),
               ),

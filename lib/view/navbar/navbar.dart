@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:reciclagem/configuration/hexadecimal.dart';
 import 'package:reciclagem/view/navbar/tabs/mapa.dart';
 import 'package:reciclagem/view/navbar/tabs/saiba_mais.dart';
 import 'package:reciclagem/view/navbar/tabs/tela_login.dart';
@@ -16,6 +17,7 @@ class Navigation extends StatelessWidget {
           appBar: AppBar(
             title: const Text('Recicla IFB'),
             centerTitle: true,
+            backgroundColor: HexColor("008251"),
             bottom: TabBar(
               tabs: [
                 Tab(icon: Icon(Icons.article_outlined), text: 'Saiba Mais'),
